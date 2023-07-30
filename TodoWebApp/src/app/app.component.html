@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="header">
+    <h2>Add Todo Item</h2>
+
+    <form class="submit {{(editDisplay === true ? 'off' : '')}}">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <input type="text" name="inputTodo" id="inputTodo" class="form-control todo-input" placeholder="Enter todo..." [(ngModel)]="inputTodo">
+          </div>
+        </div>
+    
+        <div class="col-md-2">
+          <div class="form-check">
+            <input type="checkbox" id="isDone" class="form-check-input" [(ngModel)]="isDone" (click)="onCheckboxClickTest()">
+            <label class="form-check-label" for="isDone"></label>
+          </div>
+        </div>
+    
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary" (click)="addTodo()">Add Todo</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div *ngFor="let todo of todos; let i = index;">
+    <!-- map content to card -->
+    <div class="card">
+      <div class="todo-content">
+        <!-- Checkbox -->
+        <input type="checkbox" [(ngModel)]="todo.isDone" (click)="onCheckBoxClick($event, todo)">
+        
+        <ng-container *ngIf="!showEditButton; else editMode">
+          {{ todo.title }}
+        </ng-container>
+  
+  
+        <ng-template #editMode>
+          <input type="text" [(ngModel)]="todo.title">
+        </ng-template>
+      </div>
+  
+      <div>
+    
+        <button class="edit {{ showEditButton ? '' : 'off' }}" (click)="onEditClick(todo)">
+          {{ showEditButton ? 'Save' : 'Edit' }}
+        </button>
+        <button class="delete" (click)="onDeleteClick(todo)">Remove</button>
+      </div>
+    </div>
+  </div>
+
+</div>
