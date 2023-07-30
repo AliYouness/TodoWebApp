@@ -1,8 +1,7 @@
-# TodoWebApp (BackEnd)
+# TodoWebApp 
+# Overview: Todo App
 
-# Background 
-A Todo app is a simple task management application designed to help users organize their daily tasks, activities, or to-do items in a structured and manageable way. It provides a user-friendly interface to create, update, and delete tasks, as well as mark tasks as completed.
-
+The Todo App is a multi-project solution consisting of three main projects: Backend (C#), Frontend (AngularJS), and Todo.Test (Unit Test).
 # Key Feature
 
 Task List: Displaying a list of tasks, often categorized.
@@ -16,10 +15,6 @@ Task Completion: Providing a checkbox or button to mark a task as isDone when it
 Task Deletion: Allowing users to remove tasks from the list when they are no longer needed.
 
 Persistence: Saving tasks in a ManagoDB.
-
-# Overview: Todo App
-
-The Todo App is a multi-project solution consisting of three main projects: Backend (C#), Frontend (AngularJS), and Todo.Test (Unit Test).
 
 # Backend (C# Project):
 The Backend project serves as the server-side component of the Todo App. It is developed using C# and provides APIs to handle data storage and retrieval. To set up the Backend project, ensure you have MongoDB installed on your machine. Update the DBconnection settings in appsettings.json to match your MongoDB connection details. Modify the following section:
